@@ -14,6 +14,7 @@ int oddOrEven(int total)	{
 	srand (time(NULL));
 	cout << "Do you want to bet on odd or even? (Odd/Even)" << endl;
 	cin >> ans;
+	//accept input
 	if(ans == "Odd")	{
 		num = 1;
 	}
@@ -22,7 +23,7 @@ int oddOrEven(int total)	{
 	}
 	while(flag == 0)	{
 		cout << "Enter your bet value: ";
-		cin >> betVal;
+		cin >> betVal; //accept bet value
 		if(betVal > total)	{
 			cout << "You have $" << total << ". You cannot bet $" << betVal << "." << endl;
 			continue;
@@ -31,6 +32,7 @@ int oddOrEven(int total)	{
 			break;
 		}
 	}
+	//generate random number
 	int actual = rand() % 39 + 1;
 	if(actual == 37)	{
 		cout << "You landed on 0" << endl;
@@ -44,6 +46,7 @@ int oddOrEven(int total)	{
 	else	{
 		cout << "You landed on an odd number." << endl;
 	}
+	//compare to bet number
 	if(actual == 37 || actual == 38)	{
 		cout << "You lose!" << endl;
 		total = total - betVal;
@@ -56,6 +59,7 @@ int oddOrEven(int total)	{
 		cout << "You lose!" << endl;
 		total = total - betVal;
 	}
+	//output new total
 	cout << "You have $" << total << "." << endl;
 	return total;
 }
