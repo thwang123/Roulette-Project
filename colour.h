@@ -39,12 +39,9 @@ int colour(int total)	{
 		}
 	}
 	int actual = rand() % 39 + 1; //generate random number
-	//associate 0 and 00 with integers
-	if(actual == 37)	{
-		cout << "You landed on 0" << endl;
-	}
-	else if(actual == 38)	{
-		cout << "You landed on 00" << endl;
+	//compare values to determine what was landed on
+	if(actual == 37 || actual == 38)	{
+		cout << "You landed on green." << endl;
 	}
 	//set odd numbers to red and even numbers to black
 	else if(actual%2 == 0)	{
