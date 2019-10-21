@@ -39,8 +39,9 @@ int main()	{
 		cout << "Repeat?" << endl; //ask if user wants to repeat
 		cin >> ans;
 		if(toupper(ans.at(0)) == 'N' || ans.at(0) == 'n')	{ //if user does not want to repeat Exit
-			cout << "Thank you" << endl << "Goodbye";
+			cout << "Thank you" << endl << "Goodbye" << endl;
 			break;
 		}
 	}
+	system("pause");
 }
