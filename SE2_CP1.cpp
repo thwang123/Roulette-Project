@@ -12,7 +12,7 @@ int main()	{
 	int playerRouletteChoice;
 	cout << "Hello and welcome to Command Line Casino! At the moment we have the game roulette to play. Would you like to play? (y/n)" << endl;
 	cin >> playerGameChoice; //accept input
-	while(playerGameChoice != 'y')	{ //error checking input value
+	while(playerGameChoice != 'y' || 'Y')	{ //error checking input value
 			cout << "I'm sorry but we only have the game roulette, would you like to play? (y/n)"<<endl;
 			cin >> playerGameChoice;
 	}
