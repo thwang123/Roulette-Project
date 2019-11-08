@@ -40,12 +40,16 @@ int oddOrEven(int total)	{
 	else if(actual == 38)	{
 		cout << "You landed on 00" << endl;
 	}
-	else if(actual%2 == 0)	{
-		cout << "You landed on an even number."  << endl;
-	}
 	else	{
-		cout << "You landed on an odd number." << endl;
+		cout << "You landed on " << actual << endl;
+		if(actual%2 == 0)	{
+			cout << "You landed on an even number."  << endl;
+		}
+		else	{
+			cout << "You landed on an odd number." << endl;
+		}
 	}
+	 
 	//compare to bet number
 	if(actual == 37 || actual == 38)	{
 		cout << "You lose!" << endl;

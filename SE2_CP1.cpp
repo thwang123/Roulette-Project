@@ -1,6 +1,7 @@
 #include "oddOrEven.h"
 #include "number.h"
 #include "colour.h"
+#include <string>
 
 using namespace std;
 
@@ -8,13 +9,18 @@ int main()	{
 	string ans;
 	int total = 300;
 	int flag = 0;
+	int f = 0;
 	char playerGameChoice;
 	int playerRouletteChoice;
 	cout << "Hello and welcome to Command Line Casino! At the moment we have the game roulette to play. Would you like to play? (y/n)" << endl;
 	cin >> playerGameChoice; //accept input
-	while(playerGameChoice != 'y' || 'Y')	{ //error checking input value
-			cout << "I'm sorry but we only have the game roulette, would you like to play? (y/n)"<<endl;
-			cin >> playerGameChoice;
+	while(f == 0)	{ //error checking input value
+		if(playerGameChoice == 'y' || playerGameChoice == 'Y')	{
+			break;
+		}
+		else	{
+			cout << "I'm sorry, we only have the game Roulette. Would you like to play? (y/n)" << endl;
+		}
 	}
 	while(flag == 0)	{ //loop until the player no longer wants to play
 		cout << "What kind of bet would you like to place?" << endl;
@@ -35,6 +41,7 @@ int main()	{
 		if(total == 0)	{ //if amount of money is 0 exit game
 			cout << "You are out of money." << endl;
 			cout << "Thank you" << endl << "Goodbye";
+			break;
 		}
 		cout << "Repeat?" << endl; //ask if user wants to repeat
 		cin >> ans;
