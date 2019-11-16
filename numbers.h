@@ -14,12 +14,16 @@ int numbers(int total)	{
 	string ansTwo;
 	int f = 0;
 	while(f == 0)	{
-		cout << "Enter the first number upon which you want to bet and the amount you wish to bet on it (space separated): "; //accept first bet number and value;
+		cout << "Enter the number upon which you want to bet and the amount you wish to bet on it (space separated)" << endl; //accept first bet number and value;
+		cout << "If you enter more than two numbers, they will be ignored past the first two." << endl;
 		cin.ignore();
 		getline(cin, ans);
 		//split string into bet and value separate strings
 		ansOne = ans.substr(0, ans.find(" "));
 		ansTwo = ans.substr(ans.find(" "), string::npos);
+		if(ansTwo.find(" ") != string::npos)	{
+			ansTwo = ansTwo.substr(0, ansTwo.find(" "));
+		}
 		//cast bet value string string to integer;
 		betOne = atoi(ansTwo.c_str());
 		//check if bet number is 0 or double 0
